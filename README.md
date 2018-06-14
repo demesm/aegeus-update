@@ -1,6 +1,6 @@
 # aegeus-update
-update nodes
+update nodes  
 
-sudo su root
-cd ~
+sudo su root  
+cd ~  
 bash <(curl https://raw.githubusercontent.com/demesm/aegeus-update/master/upgrade.sh)
