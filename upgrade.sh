@@ -14,7 +14,8 @@ systemctl stop Aegeus.service && mv /root/Aegeus-1.2-Linux-64-bit/aegeus-cli /us
 print_status "start alias in wallet, then hit enter to continue"
 pause
 
-sleep 10
+print_status "sleeping 30s before restarting service"
+sleep 30
 
 systemctl restart Aegeus.service
 watch -n2 aegeus-cli masternode status
