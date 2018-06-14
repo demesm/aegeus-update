@@ -8,8 +8,6 @@ print_status() {
     echo "## $1"
 }
 
-sudo su root
-cd ~
 wget https://github.com/AegeusCoin/aegeus/releases/download/1.2/Aegeus-1.2-Linux-64-bit.tar.gz && tar -zxvf Aegeus-1.2-Linux-64-bit.tar.gz
 systemctl stop Aegeus.service
 mv /root/Aegeus-1.2-Linux-64-bit/aegeus-cli /usr/local/bin/aegeus-cli
