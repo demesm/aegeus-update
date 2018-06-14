@@ -8,7 +8,7 @@ print_status() {
     echo "## $1"
 }
 
-wget https://github.com/demesm/aegeus-update/releases/download/1.2/Aegeus-1.2-Linux-64-bit.tar.gz
+wget https://github.com/AegeusCoin/aegeus/releases/download/1.2/Aegeus-1.2-Linux-64-bit.tar.gz
 tar -zxvf Aegeus-1.2-Linux-64-bit.tar.gz
 systemctl stop Aegeus.service
 cp ./Aegeus-1.2-Linux-64-bit/* /usr/local/bin/
