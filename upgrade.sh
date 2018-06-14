@@ -13,11 +13,14 @@ tar -zxvf Aegeus-1.2-Linux-64-bit.tar.gz
 systemctl stop Aegeus.service
 cp ./Aegeus-1.2-Linux-64-bit/* /usr/local/bin/
 
+systemctl start Aegeus.service
 print_status "start alias in wallet, then hit enter to continue"
 pause
 
 print_status "sleeping 30s before restarting service"
 sleep 30
 
-systemctl start Aegeus.service
+systemctl restart Aegeus.service
+sleep 5
+
 watch -n2 'aegeus-cli masternode status && aegeus-cli getinfo'
