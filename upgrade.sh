@@ -8,8 +8,10 @@ print_status() {
     echo "## $1"
 }
 
-wget https://github.com/AegeusCoin/aegeus/releases/download/1.2/Aegeus-1.2-Linux-64-bit.tar.gz && tar -zxvf Aegeus-1.2-Linux-64-bit.tar.gz
-systemctl stop Aegeus.service && mv /root/Aegeus-1.2-Linux-64-bit/aegeus-cli /usr/local/bin/aegeus-cli && mv /root/Aegeus-1.2-Linux-64-bit/aegeusd /usr/local/bin/aegeusd
+wget https://github.com/AegeusCoin/aegeus/releases/download/1.2/Aegeus-1.2-Linux-64-bit.tar.gz
+tar -zxvf Aegeus-1.2-Linux-64-bit.tar.gz
+systemctl stop Aegeus.service
+cp ./Aegeus-1.2-Linux-64-bit/* /usr/local/bin/
 
 print_status "start alias in wallet, then hit enter to continue"
 pause
@@ -17,5 +19,5 @@ pause
 print_status "sleeping 30s before restarting service"
 sleep 30
 
-systemctl restart Aegeus.service
-watch -n2 aegeus-cli masternode status
+systemctl start Aegeus.service
+watch -n2 'aegeus-cli masternode status && aegeus-cli getinfo'
